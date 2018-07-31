@@ -1,0 +1,10 @@
+#diagonal {
+    width: 100%; 
+    height: 400px;
+    background-color: #0078d7;
+
+    -ms-transform: skew(0deg, -5deg); /* IE 9 */
+    -webkit-transform: skew(0deg, -10deg); /* Safari */
+    transform: skew(0deg, 5deg); /* Standard syntax */
+    
+}

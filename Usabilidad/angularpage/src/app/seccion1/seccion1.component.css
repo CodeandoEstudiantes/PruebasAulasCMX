@@ -1,0 +1,22 @@
+#flex{
+    display: flex;
+    justify-content: center;
+}
+
+
+#flex div{
+border: 1px solid red;
+
+
+}
+
+#flex #card{
+    height: 150px;
+    width: 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 20px ;
+}
+#flex #card #button{
+    grid-column: 1/3;
+}
