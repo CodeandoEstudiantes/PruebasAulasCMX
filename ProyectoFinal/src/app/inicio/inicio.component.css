@@ -7,18 +7,19 @@ height: 100vw;
 #divpadre{
     margin: auto;
     display: grid;
-    grid-template-columns:  1fr 1fr;
+    grid-template-columns:  1fr 1fr 1fr;
 
-border: 3px solid rgb(173, 12, 47); 
+/*border: 3px solid rgb(173, 12, 47); */
 background-color: rgb(255, 255, 255);
 gap: 10px;
 
 }
 
 #hijos{
-   
-    border: 3px solid rgba(0, 128, 0, 0.829); 
-    background-color: rgba(255, 255, 255, 0.431);
+    border: rgba(2, 255, 158, 0.431) 5px solid;
+    border-radius: 20px;
+  
+    
 
 
 }
