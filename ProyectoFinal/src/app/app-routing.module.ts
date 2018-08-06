@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
-import { FooterComponent }   from './footer/footer.component'
-import { HeaderComponent } from './header/header.component';
 import { ProyectosComponent} from './proyectos/proyectos.component';
 import { QuienessomosComponent} from './quienessomos/quienessomos.component';
 import { InicioComponent} from './inicio/inicio.component';
@@ -10,6 +8,7 @@ import { CreaunacolectaComponent} from './creaunacolecta/creaunacolecta.componen
 import {ComodonarComponent} from './comodonar/comodonar.component';
 import {ContactoComponent} from './contacto/contacto.component';
 import {LoginComponent} from './login/login.component';
+import {RegistroComponent} from './registro/registro.component'
 
 
 const routes: Routes = [
@@ -17,14 +16,7 @@ const routes: Routes = [
     path: 'inicio',
     component: InicioComponent
   },
-  {
-    path: 'header',
-    component: HeaderComponent
-  },
-  {
-    path: 'footer',
-    component: FooterComponent
-  },
+
   {
     path: 'proyectos',
     component: ProyectosComponent
@@ -39,7 +31,7 @@ const routes: Routes = [
   },
   {
     path: 'registro',
-    component: FooterComponent
+    component: RegistroComponent
   },
  
   {
@@ -55,6 +47,7 @@ const routes: Routes = [
       path: 'login',
       component: LoginComponent
       },
+
   { path: '', redirectTo: '/inicio', pathMatch: 'full' }
 ]
 @NgModule({
