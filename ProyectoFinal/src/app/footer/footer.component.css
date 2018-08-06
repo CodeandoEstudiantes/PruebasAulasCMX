@@ -1,15 +1,16 @@
-*{
+body{
+    height: 100%;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
     font-family: sans-serif;
 }
-
 footer{
     width: 100%;
     background: #202020;
     color: white;   
     bottom: 0%;
+
 }
 
 .container-footer-all{
@@ -17,6 +18,7 @@ footer{
     max-width: 1200px;
     margin: auto;
     padding: 40px;
+    bottom: 0%;
 }
 
 .container-body{
@@ -89,7 +91,7 @@ footer{
 
 .container-footer{
     width: 100%;  
-    background: #101010;
+    background: #3b5998;
 }
 
 .footer{
@@ -101,7 +103,7 @@ footer{
 }
 
 .copyright{
-    color: #C7C7C7;
+    color: white;
 }
 
 .copyright a{
@@ -112,7 +114,7 @@ footer{
 
 .information a{
     text-decoration: none;
-    color: #C7C7C7;
+    color:white;
 }
 
 
