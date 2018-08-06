@@ -10,14 +10,13 @@
     z-index: 7000;
   }
     #maestro{
-        top: 300%;
-        box-shadow: 5px 10px #26e40d54;
+        top: 38px;
+        box-shadow: 5px 5px #26e40d80;
         margin: auto;
+        position: relative;
         background:#ffffff;
-        width:550px;
-        height: 635px;
-        
-      
+        width:500px;
+        height: 650px;
     }
 
   .wrap {
@@ -169,3 +168,7 @@
   
   /*# sourceMappingURL=estilos.css.map */
   
+  @keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
