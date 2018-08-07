@@ -1,4 +1,11 @@
 
+#divpadrecarousel{
+width: 800px;
+margin: auto;
+
+}
+
+
 #divmaster{
     width: 100vh;
 height: 100vw;
@@ -6,7 +13,6 @@ height: 100vw;
 
 #divpadre{
     width: 600px;
-
     margin: auto;
     display: grid;
     grid-template-columns:  1fr 1fr;

@@ -46,7 +46,7 @@ header nav ul li a {
 	color:#fff;
 	display:block;
 	text-decoration:none;
-	padding: 20px;
+	padding: 10px;
 }
 
 header nav ul li a span {
@@ -62,7 +62,7 @@ header nav ul li .children {
 	background:#1213127e;
 	position: absolute;
 	width: 150%;
-	z-index:1000;
+	
 }
 
 header nav ul li .children li {
@@ -79,8 +79,8 @@ header nav ul li .children li a span {
 	float: right;
 	position: relative;
 	top:3px;
-	margin-right:0;
-	margin-left:10px;
+	margin-right:100px;
+	margin-left:100px;
 }
 
 header nav ul li .caret {
@@ -89,11 +89,6 @@ header nav ul li .caret {
 	margin-left:10px;
 	margin-right:0px;
 }
-
-
-
-
-
 
  
 @media screen and (max-width: 300px) {
@@ -104,18 +99,18 @@ header nav ul li .caret {
 	.menu_bar {
         
 		display:block;
-		width:100%;
+		width:90%;
 		position: fixed;
-		top:0;
+		top:0px;
 		background:#0f0f0fd8;
 	}
 
 	.menu_bar .bt-menu {
 		display: block;
-		padding: 20px;
+		padding: 5px;
 		color: #fff;
 		overflow: hidden;
-		font-size: 25px;
+		font-size: 5px;
 		font-weight: bold;
 		text-decoration: none;
 	}
@@ -126,12 +121,15 @@ header nav ul li .caret {
 	}
 
 	header nav {
-		z-index:1000;
-		width: 80%;
-		height: calc(100% - 80px);
-		position: fixed;
-		right:100%;
-		margin: 0;
+
+	background:#0f0f0fd8;
+	z-index:1000;
+	/* max-width: 1000px; */
+	width:100%;
+	margin:0px;
+	margin-top: 0px;
+	position: fixed;
+		
 		
 	}
 
@@ -142,14 +140,16 @@ header nav ul li .caret {
 
 	header nav ul li a {
 		display: block;
+		padding: 5px;
 	}
 
 	header nav ul li:hover .children {
-		display: none;
+		
+		
 	}
 
 	header nav ul li .children {
-		width: 100%;
+		width: 90%;
 		position: relative;
 	}
 
@@ -197,8 +197,9 @@ header nav ul li .caret {
 	}
 
 	header nav {
+		
 		width: 80%;
-		height: calc(100% - 80px);
+		height: calc(100% -10px);
 		position: fixed;
 		right:100%;
 		margin: 0;
@@ -206,7 +207,8 @@ header nav ul li .caret {
 	}
 
 	header nav ul li {
-		display: block;
+		padding: 5px;
+		display: block ;
 		border-bottom:1px solid rgba(255,255,255,.5);
 	}
 
@@ -215,7 +217,7 @@ header nav ul li .caret {
 	}
 
 	header nav ul li:hover .children {
-		display: none;
+		
 	}
 
 	header nav ul li .children {

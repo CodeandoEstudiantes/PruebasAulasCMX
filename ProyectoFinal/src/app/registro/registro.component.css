@@ -25,7 +25,7 @@
     padding: 10px;
     margin: auto;
     background: rgb(255, 255, 255);
-    animation-name: animatetop;
+    
 }
   
   .contenedor-formulario {
@@ -33,14 +33,13 @@
     height: 200px;
     color: #2411d3;
     padding: 0px; 
-    animation-name: animatetop;
    
 }
     .contenedor-formulario .formulario {
       width: 100%;
       margin: auto; 
       height: 20px;
-      animation-name: animatetop;
+    
       
     }
       .contenedor-formulario .formulario .input-group {
@@ -180,13 +179,21 @@
 @media screen and (max-width: 600px) {
     #maestro{
         border-radius: 5%;
-        top: 30px;
+        top: 10px;
         box-shadow: 5px 5px #26e40d80;
         margin: auto;
         position: relative;
         background:#ffffff;
         width:350px;
         height: 450px;
-        animation-name: animatetop;
+        
     }
+    .wrap {
+      width: 90%;
+      max-width: 350px;
+      padding:0px;
+      margin: auto;
+      background: rgb(255, 255, 255);
+      
+  }
 }
