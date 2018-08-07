@@ -15,7 +15,7 @@
         position: relative;
         background:#ffffff;
         width:450px;
-        height: 650px;
+        height: 550px;
         animation-name: animatetop;
     }
 
@@ -57,7 +57,7 @@
           color: #303F9F;
           width: 100%;
           outline: none;
-          padding: 15px;
+          padding: 2px;
           background: none;
           border: none;
           border-bottom: 2px solid #BBDEFB;
@@ -161,7 +161,7 @@
         display: inline-block;
         font-family: "Roboto";
         font-size: 16px;
-        padding: 15px;
+        padding: 5px;
         width: 100%;
         -webkit-transition: all 0.3s ease;
         -o-transition: all 0.3s ease;
@@ -186,7 +186,7 @@
         position: relative;
         background:#ffffff;
         width:350px;
-        height: 650px;
+        height: 450px;
         animation-name: animatetop;
     }
 }

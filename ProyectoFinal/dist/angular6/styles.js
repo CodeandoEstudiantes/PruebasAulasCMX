@@ -48,7 +48,7 @@ module.exports = "/*!\n * Bootstrap v4.1.3 (https://getbootstrap.com/)\n * Copyr
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "/* You can add global styles to this file, and also import other style files */\n"
+module.exports = ""
 
 /***/ }),
 
@@ -580,8 +580,8 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/telmexhub/PruebasAulasCMX/ProyectoFinal/src/styles.css */"./src/styles.css");
-module.exports = __webpack_require__(/*! /home/telmexhub/PruebasAulasCMX/ProyectoFinal/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
+__webpack_require__(/*! /home/compuaztec/PruebasAulasCMX/ProyectoFinal/src/styles.css */"./src/styles.css");
+module.exports = __webpack_require__(/*! /home/compuaztec/PruebasAulasCMX/ProyectoFinal/node_modules/bootstrap/dist/css/bootstrap.min.css */"./node_modules/bootstrap/dist/css/bootstrap.min.css");
 
 
 /***/ })
