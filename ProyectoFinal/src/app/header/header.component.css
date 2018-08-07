@@ -15,7 +15,8 @@ body {background:#FEFEFE;}
 header {
     width: 100%;
     background-color:#000000;
-    margin-top: 0%;
+	margin-top: 0%;
+	
 }
 
 header nav {
@@ -26,6 +27,8 @@ header nav {
 	margin:0px;
 	margin-top: 0px;
 	position: fixed;
+	
+	
 }
 
 
@@ -46,7 +49,7 @@ header nav ul li a {
 	color:#fff;
 	display:block;
 	text-decoration:none;
-	padding: 10px;
+	padding: 20px;
 }
 
 header nav ul li a span {
@@ -92,9 +95,7 @@ header nav ul li .caret {
 
  
 @media screen and (max-width: 300px) {
-	body {
-		padding-top:80px;
-	}
+
 
 	.menu_bar {
         
@@ -127,8 +128,9 @@ header nav ul li .caret {
 	/* max-width: 1000px; */
 	width:100%;
 	margin:0px;
-	margin-top: 0px;
+	margin-top: 50px;
 	position: fixed;
+	
 		
 		
 	}
@@ -168,25 +170,21 @@ header nav ul li .caret {
 	
 
 @media screen and (max-width: 650px) {
-	
-	body {
-		padding-top:80px;
-	}
 
 	.menu_bar {
 		display:block;
 		width:100%;
 		position: fixed;
-		top:0;
-		background:#0f0f0fd8;
+		top:0px;
+		background:#3a3a3af1;
 	}
 
 	.menu_bar .bt-menu {
 		display: block;
-		padding: 20px;
+		padding: 10px;
 		color: #fff;
 		overflow: hidden;
-		font-size: 25px;
+		font-size: 20px;
 		font-weight: bold;
 		text-decoration: none;
 	}
@@ -197,17 +195,18 @@ header nav ul li .caret {
 	}
 
 	header nav {
-		
-		width: 80%;
+		background:#0f0f0fd8;
+		width: 70%;
 		height: calc(100% -10px);
 		position: fixed;
 		right:100%;
-		margin: 0;
-		
+		margin: 1px;
+		top: 45px;
+
 	}
 
 	header nav ul li {
-		padding: 5px;
+		padding: 1px;
 		display: block ;
 		border-bottom:1px solid rgba(255,255,255,.5);
 	}
