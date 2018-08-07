@@ -117,8 +117,8 @@ header nav ul li .caret {
 	}
 
 	.menu_bar span {
-		float: right;
-		font-size: 40px;
+		float: left;
+		font-size: 50px;
 	}
 
 	header nav {
@@ -191,7 +191,7 @@ header nav ul li .caret {
 
 	.menu_bar span {
 		float: right;
-		font-size: 40px;
+		font-size: 10px;
 	}
 
 	header nav {
