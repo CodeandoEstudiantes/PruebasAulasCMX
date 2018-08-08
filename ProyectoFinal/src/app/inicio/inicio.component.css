@@ -5,12 +5,6 @@ margin: auto;
 
 }
 
-
-#divmaster{
-    width: 100vh;
-height: 100vw;
-}
-
 #divpadre{
     width: 600px;
     margin: auto;
@@ -35,6 +29,12 @@ gap: 10px;
 }
 
 @media screen and (max-width: 700px) {
+
+    #divpadrecarousel{
+        width: 350px;
+        margin: auto;
+        
+        }
 
     #divpadre{
         margin: auto;

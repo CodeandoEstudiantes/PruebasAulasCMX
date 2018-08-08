@@ -16,6 +16,7 @@ import { LoginComponent } from './login/login.component';
 import { BarraflotanteComponent } from './barraflotante/barraflotante.component';
 import { NgxPopper } from 'angular-popper';
 import { FormularioComponent } from './formulario/formulario.component';
+import { ProyecComponent } from './proyec/proyec.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { FormularioComponent } from './formulario/formulario.component';
     CreaunacolectaComponent,
     LoginComponent,
     BarraflotanteComponent,
-    FormularioComponent
+    FormularioComponent,
+    ProyecComponent
   ],
   imports: [
     BrowserModule,
