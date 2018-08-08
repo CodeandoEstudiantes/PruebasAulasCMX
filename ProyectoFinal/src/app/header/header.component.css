@@ -54,7 +54,7 @@ header nav ul li a {
 	color:#fff;
 	display:block;
 	text-decoration:none;
-	padding: 20px;
+	padding: 20px 10px;
 }
 
 header nav ul li a span {
@@ -174,7 +174,7 @@ header nav ul li .caret {
 }
 	
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 900px) {
 
 	.menu_bar {
 		display:block;
@@ -200,6 +200,7 @@ header nav ul li .caret {
 	}
 
 	header nav {
+		
 		background:#0f0f0fd8;
 		width: 70%;
 		height: calc(100% -10px);
