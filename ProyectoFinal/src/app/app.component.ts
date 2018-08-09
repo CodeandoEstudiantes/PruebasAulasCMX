@@ -13,7 +13,7 @@ export class AppComponent {
 this.dataservice.getData().subscribe(data=>{
   this.posts= data;
 
-/*console.log(data);*/
+console.log(data);
 });
 
 
