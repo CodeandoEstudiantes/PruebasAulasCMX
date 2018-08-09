@@ -17,6 +17,8 @@ import { BarraflotanteComponent } from './barraflotante/barraflotante.component'
 import { NgxPopper } from 'angular-popper';
 import { FormularioComponent } from './formulario/formulario.component';
 import { ProyecComponent } from './proyec/proyec.component';
+import {DataService}from './data.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -39,9 +41,10 @@ import { ProyecComponent } from './proyec/proyec.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    NgxPopper
+    NgxPopper,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
