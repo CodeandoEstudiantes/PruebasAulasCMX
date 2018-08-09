@@ -2,3 +2,12 @@
 <p>
   proyectos works!
 </p>
+
+<div id="divpadre">
+    <div  *ngFor="let post of posts" id="divhijos">
+        <a href=""><img src="/assets/img/crowdfunding-620x350.jpg" alt=""></a>
+        <h5>{{post.title}}</h5>
+        <p>{{post.body}}</p>
+        </div>  
+    </div>
+  
