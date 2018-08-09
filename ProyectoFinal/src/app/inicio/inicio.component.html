@@ -28,6 +28,10 @@
   </div>
 </div>
 
+
+
+
+
   <br>
   <br>
   <div id="divpadre">
@@ -62,3 +66,7 @@
     </div>
 <br>
    
+<div  *ngFor="let post of posts">
+  <h4>{{post.title}}</h4>
+  <p>{{post.body}}</p>
+  </div>

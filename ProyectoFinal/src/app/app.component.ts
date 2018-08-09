@@ -8,18 +8,19 @@ import {DataService} from './data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
+  posts = [];
   constructor( private dataservice: DataService){
 this.dataservice.getData().subscribe(data=>{
+  this.posts= data;
 
-console.log(data);
+/*console.log(data);*/
 });
 
 
   }
   
   title = 'app';
-  posts = [];
+  
 }
 
 
