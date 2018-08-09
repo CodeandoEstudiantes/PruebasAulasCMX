@@ -1,5 +1,9 @@
-import { Component } from '@angular/core';
-import {DataService} from './data.service';
+import {
+  Component
+} from '@angular/core';
+import {
+  DataService
+} from './data.service';
 
 
 @Component({
@@ -9,24 +13,16 @@ import {DataService} from './data.service';
 })
 export class AppComponent {
   posts = [];
-  constructor( private dataservice: DataService){
-this.dataservice.getData().subscribe(data=>{
-  this.posts= data;
+  constructor(private dataservice: DataService) {
+    this.dataservice.getData().subscribe(data => {
+      this.posts = data;
 
-console.log(data);
-});
+      console.log(data);
+    });
 
 
   }
-  
+
   title = 'app';
-  
+
 }
-
-
-
-
-
-
-
-
