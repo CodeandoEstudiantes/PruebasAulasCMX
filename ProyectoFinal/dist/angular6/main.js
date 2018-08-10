@@ -990,7 +990,7 @@ var ProyecComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#divpadre{\n    width: 800px;\n    margin: auto;\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns:  1fr 1fr;\n        grid-template-columns:  1fr 1fr;\n\n/*border: 3px solid rgb(173, 12, 47); */\nbackground-color: rgb(255, 255, 255);\ngap: 10px;\n\n}\n\n#divhijos{\n    grid-column-gap: 100px;\n    grid-row-gap: 1000Px;\n    padding: 40px 40px;\n    border: rgb(189, 230, 176) 5px solid;\n    border-top-left-radius: 20px;\n    border-bottom-right-radius: 20px;\n    box-shadow: 4px 7px #03a9eb7a;\n\n}\n\nimg{\nwidth: 300px;\nheight: 100px;\n\n\n}\n\n@media screen and (max-width: 700px) {\n\n    #divpadrecarousel{\n        width: 350px;\n        margin: auto;\n        \n        }\n\n    #divpadre{\n        margin: auto;\n        display: -ms-grid;\n        display: grid;\n        -ms-grid-columns: 1fr;\n            grid-template-columns: 1fr;\n        width: 100%;\n        height: 100%;\n    background-color: rgb(255, 255, 255);\n    }\n    \n    }\n    "
+module.exports = "#divpadre{\n    width: 800px;\n    margin: auto;\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns:  1fr 1fr;\n        grid-template-columns:  1fr 1fr;\n\n/*border: 3px solid rgb(173, 12, 47); */\nbackground-color: rgb(255, 255, 255);\ngap: 10px;\n\n}\n\n#divhijos{\n    grid-column-gap: 100px;\n    grid-row-gap: 1000Px;\n    padding: 40px 40px;\n    border: rgb(189, 230, 176) 5px solid;\n    border-top-left-radius: 20px;\n    border-bottom-right-radius: 20px;\n    box-shadow: 4px 7px #03a9eb7a;\n\n}\n\nimg{\nwidth: 300px;\nheight: 100px;\n\n\n}\n\n@media screen and (max-width: 700px) {\n\n    #divpadrecarousel{\n        width: 350px;\n        margin: auto;\n        \n        }\n\n    #divpadre{\n        margin: auto;\n        display: -ms-grid;\n        display: grid;\n        -ms-grid-columns: 1fr;\n            grid-template-columns: 1fr;\n        width: 100%;\n        height: 100%;\n    background-color: rgb(255, 255, 255);\n    }\n    imgp{\n        width: 300px;\n        height: 100px;\n    }\n    }\n    "
 
 /***/ }),
 
@@ -1001,7 +1001,7 @@ module.exports = "#divpadre{\n    width: 800px;\n    margin: auto;\n    display:
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<p>\n  proyectos works!\n</p>\n\n<div id=\"divpadre\">\n    <div  *ngFor=\"let post of posts\" id=\"divhijos\">\n        <a href=\"\"><img src=\"/assets/img/quees.png\" alt=\"\"></a>\n        <h5>{{post.name}}</h5>\n        <p>{{post.body}}</p>\n        </div>  \n    </div>\n  "
+module.exports = "\n<p>\n  proyectos works!\n</p>\n\n<div id=\"divpadre\">\n    <div  *ngFor=\"let post of posts\" id=\"divhijos\">\n        <a href=\"\"><img src=\"https://picsum.photos/200\" alt=\"\"></a>\n        <h5>{{post.name}}</h5>\n        <p>{{post.body}}</p>\n        </div>  \n    </div>\n  "
 
 /***/ }),
 
@@ -1062,7 +1062,7 @@ var ProyectosComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#divhijo{\nwidth: 800px;\nbox-shadow: 7px 12px rgba(255, 81, 0, 0.349);\nheight: auto; \nmargin: auto;\ntext-align: justify;\n}\n#displayiconos img{\n    align-content: center;\nborder-radius: 40px;\n}\n#divicono{\n    width:40px;\nalign-content: center;\nbackground-color: blue;\nborder-radius: 40px;\n}\nimg{\n    box-shadow: 4px 5px rgba(0, 0, 0, 0.267);\n}"
+module.exports = "#divhijo{\nwidth: 800px;\nbox-shadow: 7px 12px rgba(255, 81, 0, 0.349);\nheight: auto; \nmargin: auto;\ntext-align: justify;\n}\n#displayiconos img{\n    align-content: center;\nborder-radius: 40px;\n}\n#divicono{\n    width:40px;\nalign-content: center;\nbackground-color: blue;\nborder-radius: 40px;\n}\nimg{\n    box-shadow: 4px 5px rgba(0, 0, 0, 0.267);\n\n}\n@media screen and (max-width: 400px) {\n    img{\n        box-shadow: 4px 5px rgba(0, 0, 0, 0.267);\n        width: 350px;\n\n}\n\n#divhijo{\n    width: 330px;\n    box-shadow: 7px 12px rgba(255, 81, 0, 0.349);\n    height: auto;\n    margin: auto;\n    text-align: justify;\n\n}\n\n}"
 
 /***/ }),
 
