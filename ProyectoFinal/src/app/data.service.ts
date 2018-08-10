@@ -12,7 +12,7 @@ export class DataService {
 console.log("console funcionando")
    }
    getData(){
-     return this.httpclient.get<post[]>('https://jsonplaceholder.typicode.com/posts')
+     return this.httpclient.get<post[]>('http://pepe.sytes.net:3000/personas')
 
 
    }

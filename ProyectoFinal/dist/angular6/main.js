@@ -117,7 +117,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "#divpadre{\n    width: 600px;\n    margin: auto;\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns:  1fr 1fr;\n        grid-template-columns:  1fr 1fr;\n\n/*border: 3px solid rgb(173, 12, 47); */\nbackground-color: rgb(255, 255, 255);\ngap: 10px;\n\n}\n\n#divhijos{\n    padding: 3px 10px;\n    border: rgb(189, 230, 176) 5px solid;\n    border-top-left-radius: 20px;\n    border-bottom-right-radius: 20px;\n  \n    \n\n\n}\n\nimg{\nwidth: 100px;\nheight: 50px;\nborder-radius: 30px;\n\n}\n\n@media screen and (max-width: 700px) {\n\n    #divpadrecarousel{\n        width: 350px;\n        margin: auto;\n        \n        }\n\n    #divpadre{\n        margin: auto;\n        display: -ms-grid;\n        display: grid;\n        -ms-grid-columns: 1fr;\n            grid-template-columns: 1fr;\n        width: 100%;\n        height: 100%;\n    background-color: rgb(255, 255, 255);\n    }\n    \n    }\n    "
 
 /***/ }),
 
@@ -128,7 +128,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<app-header> </app-header>\n\n<!--<app-barraflotante></app-barraflotante>-->\n\n\n<div style=\"min-height: 70vh\" class=\"body\">    <!-- para posicionar el footer siempre abajo <div style=\"min-height: 70vh  del viewport>-->\n\n\n<router-outlet></router-outlet>\n\n</div>\n\n<app-footer></app-footer>"
+module.exports = "<app-header> </app-header>\n\n<!--<app-barraflotante></app-barraflotante>-->\n\n\n<div style=\"min-height: 70vh\" class=\"body\">    <!-- para posicionar el footer siempre abajo <div style=\"min-height: 70vh  del viewport>-->\n<router-outlet></router-outlet>\n</div>\n<!--\n<div id=\"divpadre\">\n        <div  *ngFor=\"let post of posts\" id=\"divhijos\">\n            <a href=\"\"><img src=\"/assets/img/crowdfunding-620x350.jpg\" alt=\"\"></a>\n            <h5>{{post.title}}</h5>\n            <p>{{post.body}}</p>\n            </div>  \n        </div> -->\n<app-footer></app-footer>"
 
 /***/ }),
 
@@ -143,23 +143,36 @@ module.exports = "<app-header> </app-header>\n\n<!--<app-barraflotante></app-bar
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppComponent", function() { return AppComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./data.service */ "./src/app/data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var AppComponent = /** @class */ (function () {
-    function AppComponent() {
+    function AppComponent(dataservice) {
+        var _this = this;
+        this.dataservice = dataservice;
+        this.posts = [];
         this.title = 'app';
+        this.dataservice.getData().subscribe(function (data) {
+            _this.posts = data;
+            console.log(data);
+        });
     }
     AppComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-root',
             template: __webpack_require__(/*! ./app.component.html */ "./src/app/app.component.html"),
             styles: [__webpack_require__(/*! ./app.component.css */ "./src/app/app.component.css")]
-        })
+        }),
+        __metadata("design:paramtypes", [_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"]])
     ], AppComponent);
     return AppComponent;
 }());
@@ -197,6 +210,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var angular_popper__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! angular-popper */ "./node_modules/angular-popper/fesm5/angular-popper.js");
 /* harmony import */ var _formulario_formulario_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./formulario/formulario.component */ "./src/app/formulario/formulario.component.ts");
 /* harmony import */ var _proyec_proyec_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./proyec/proyec.component */ "./src/app/proyec/proyec.component.ts");
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./data.service */ "./src/app/data.service.ts");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -206,6 +221,8 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
  // <-- ngModel lives here 
+
+
 
 
 
@@ -247,9 +264,10 @@ var AppModule = /** @class */ (function () {
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _app_routing_module__WEBPACK_IMPORTED_MODULE_4__["AppRoutingModule"],
                 _angular_forms__WEBPACK_IMPORTED_MODULE_2__["FormsModule"],
-                angular_popper__WEBPACK_IMPORTED_MODULE_16__["NgxPopper"]
+                angular_popper__WEBPACK_IMPORTED_MODULE_16__["NgxPopper"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_20__["HttpClientModule"]
             ],
-            providers: [],
+            providers: [_data_service__WEBPACK_IMPORTED_MODULE_19__["DataService"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
@@ -512,6 +530,50 @@ var CreaunacolectaComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/data.service.ts":
+/*!*********************************!*\
+  !*** ./src/app/data.service.ts ***!
+  \*********************************/
+/*! exports provided: DataService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DataService", function() { return DataService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var DataService = /** @class */ (function () {
+    function DataService(httpclient) {
+        this.httpclient = httpclient;
+        console.log("console funcionando");
+    }
+    DataService.prototype.getData = function () {
+        return this.httpclient.get('http://pepe.sytes.net:3000/personas');
+    };
+    DataService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], DataService);
+    return DataService;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/footer/footer.component.css":
 /*!*********************************************!*\
   !*** ./src/app/footer/footer.component.css ***!
@@ -530,7 +592,7 @@ module.exports = "body{\n    height: 100%;\n    margin: 0px;\n    padding: 0px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<footer>\n       \n  <div class=\"container-footer-all\">\n   \n       <div class=\"container-body\">\n\n           <div class=\"colum1\">\n               <h1>Mas informacion</h1>\n\n               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non incidunt voluptate exercitationem libero excepturi animi at ipsum, ipsam reprehenderit. Eligendi ab assumenda dignissimos tempora vel alias? Optio voluptatibus obcaecati temporibus.</p>\n                  </div>\n\n           <div class=\"colum2\">\n\n               <h1>Redes Sociales</h1>\n\n               <div class=\"row\">\n                   <img src=\"/assets/img/icon/facebook.png\">\n                   <label>Siguenos en Facebook</label>\n               </div>\n               <div class=\"row\">\n                   <img src=\"/assets/img/icon/twitter.png\">\n                   <label>Siguenos en Twitter</label>\n               </div>\n               <div class=\"row\">\n                   <img src=\"/assets/img/icon/instagram.png\">\n                   <label>Siguenos en Instagram</label>\n               </div>\n               <div class=\"row\">\n                   <img src=\"/assets/img/icon//google-plus.png\">\n                   <label>Siguenos en Google Plus</label>\n               </div>\n               <div class=\"row\">\n                   <img src=\"/assets/img/icon//pinterest.png\">\n                   <label>Siguenos en Pinteres</label>\n               </div>\n\n\n           </div>\n\n           <div class=\"colum3\">\n\n               <h1>Informacion Contactos</h1>\n\n               <div class=\"row2\">\n                   <img src=\"/assets/img/icon//house.png\"><label>Telmexhub, Isabel la catolica sin # </label>\n                  </div>\n\n               <div class=\"row2\">\n                   <img src=\"/assets/img/icon//smartphone.png\"><label>56-56 -11-11</label>\n                  </div>\n\n               <div class=\"row2\">\n                   <img src=\"/assets/img/icon/contact.png\"><label>compuaztec75@gmail.com</label>\n                  </div>\n\n           </div>\n\n       </div>\n   \n   </div>\n   \n   <div class=\"container-footer\">\n          <div class=\"footer\">\n               <div class=\"copyright\"> © 2018 Todos los Derechos Reservados | <a href=\"\">PePe</a></div>\n               <div class=\"information\"><a href=\"\">Informacion del equipo</a> | <a href=\"\">Aviso de Privacidad y Politicas</a> | <a href=\"\">Terminos y Condiciones</a></div></div>\n          </div>\n   \n</footer>"
+module.exports = "<footer>\n       \n  <div class=\"container-footer-all\">\n   \n       <div class=\"container-body\">\n\n           <div class=\"colum1\">\n               <h1>Mas informacion</h1>\n\n               <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non incidunt voluptate exercitationem libero excepturi animi at ipsum, ipsam reprehenderit. Eligendi ab assumenda dignissimos tempora vel alias? Optio voluptatibus obcaecati temporibus.</p>\n                  </div>\n\n           <div class=\"colum2\">\n\n               <h1>Redes Sociales</h1>\n\n               <div class=\"row\">\n                   <img src=\"/assets/img/icon/facebook.png\">\n                   <label>Siguenos en Facebook</label>\n               </div>\n               <div class=\"row\">\n                   <img src=\"/assets/img/icon/twitter.png\">\n                   <label>Siguenos en Twitter</label>\n               </div>\n               <div class=\"row\">\n                   <img src=\"/assets/img/icon/instagram.png\">\n                   <label>Siguenos en Instagram</label>\n               </div>\n               <div class=\"row\">\n                   <img src=\"/assets/img/icon//google-plus.png\">\n                   <label>Siguenos en Google Plus</label>\n               </div>\n               <div class=\"row\">\n                   <img src=\"/assets/img/icon//pinterest.png\">\n                   <label>Siguenos en Pinteres</label>\n               </div>\n\n\n           </div>\n\n           <div class=\"colum3\">\n\n               <h1>Informacion Contactos</h1>\n\n               <div class=\"row2\">\n                   <img src=\"/assets/img/icon/house.png\"><label>Telmexhub, Isabel la catolica sin # </label>\n                  </div>\n\n               <div class=\"row2\">\n                   <img src=\"/assets/img/icon//smartphone.png\"><label>56-56 -11-11</label>\n                  </div>\n\n               <div class=\"row2\">\n                   <img src=\"/assets/img/icon/contact.png\"><label>compuaztec75@gmail.com</label>\n                  </div>\n\n           </div>\n\n       </div>\n   \n   </div>\n   \n   <div class=\"container-footer\">\n          <div class=\"footer\">\n               <div class=\"copyright\"> © 2018 Todos los Derechos Reservados | <a href=\"\">PePe</a></div>\n               <div class=\"information\"><a href=\"\">Informacion del equipo</a> | <a href=\"\">Aviso de Privacidad y Politicas</a> | <a href=\"\">Terminos y Condiciones</a></div></div>\n          </div>\n   \n</footer>"
 
 /***/ }),
 
@@ -657,7 +719,7 @@ module.exports = "*{\n\tpadding:0;\n\t/*margin:0;*/\n\tbox-sizing: border-box;\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n\n\n<header>\n  <div class=\"menu_bar\">\n      <a class=\"bt-menu\"><span><img src=\"/assets/img/icon/menu.svg\" alt=\"\"></span>Menú</a>\n      </div>\n\n      <nav>\n<ul>\n  <li><a routerLink=\"inicio\"><span><img src=\"/assets/img/icon/home.svg\" alt=\"\"></span>Inicio</a></li>\n  <li class=\"submenu\">\n  <a routerLink=\"proyectos\"><span class=\"\"><img src=\"/assets/img/icon/make.svg\" alt=\"\"></span>Proyectos</a>\n  <ul class=\"children\">\n      <li><a routerLink=\"#\">Proyecto #1<span class=\"icon-dot\"></span></a></li>\n      <li><a routerLink=\"#\">Proyecto #2<span class=\"icon-dot\"></span></a></li>\n      <li><a routerLink=\"#\">Proyecto #3<span class=\"icon-dot\"></span></a></li>\n    </ul>\n  </li>\n  <li><a routerLink=\"creaunacolecta\"><span class=\"icon-rocket\"><img src=\"/assets/img/icon/coin.svg\" alt=\"\"></span>Crea una colecta</a></li>\n  <li><a routerLink=\"comodonar\"><span class=\"icon-dot\"><img src=\"/assets/img/icon/credit-card.svg\" alt=\"\"></span>Como donar</a></li>\n    <li><a routerLink=\"quienessomos\"><span class=\"icon-dot\"><img src=\"/assets/img/icon/man-woman.svg\" alt=\"\"></span>Quienes somos</a></li>\n      <li><a routerLink=\"contacto\"><span class=\"icon-mail\"><img src=\"/assets/img/icon/mail.svg\" alt=\"\"></span>Contacto</a></li>\n      <li><a routerLink=\"registro\"><span class=\"icon-mail\"><img src=\"/assets/img/icon/key.svg\" alt=\"\"></span>Registro</a></li>\n      <li><a routerLink=\"login\"><span class=\"icon-mail\"><img src=\"/assets/img/icon/enter.svg\" alt=\"\"></span>Login</a></li>\n         \n</ul>\n\n\n</nav>\n\n\n</header>"
+module.exports = "\n<header>\n  <div class=\"menu_bar\">\n      <a class=\"bt-menu\"><span><img src=\"/assets/img/icon/menu.svg\" alt=\"\"></span>Menú</a>\n      </div>\n\n      <nav>\n<ul>\n  <li><a routerLink=\"inicio\"><span><img src=\"/assets/img/icon/home.svg\" alt=\"\"></span>Inicio</a></li>\n  <li class=\"submenu\">\n  <a routerLink=\"proyectos\"><span class=\"\"><img src=\"/assets/img/icon/make.svg\" alt=\"\"></span>Proyectos</a>\n  <ul class=\"children\">\n      <li><a routerLink=\"#\">Proyecto #1<span class=\"icon-dot\"></span></a></li>\n      <li><a routerLink=\"#\">Proyecto #2<span class=\"icon-dot\"></span></a></li>\n      <li><a routerLink=\"#\">Proyecto #3<span class=\"icon-dot\"></span></a></li>\n    </ul>\n  </li>\n  <li><a routerLink=\"creaunacolecta\"><span class=\"icon-rocket\"><img src=\"/assets/img/icon/coin-dollar.svg\" alt=\"\"></span>Crea una colecta</a></li>\n  <li><a routerLink=\"comodonar\"><span class=\"icon-dot\"><img src=\"/assets/img/icon/credit-card.svg\" alt=\"\"></span>Como donar</a></li>\n    <li><a routerLink=\"quienessomos\"><span class=\"icon-dot\"><img src=\"/assets/img/icon/man-woman.svg\" alt=\"\"></span>Quienes somos</a></li>\n      <li><a routerLink=\"contacto\"><span class=\"icon-mail\"><img src=\"/assets/img/icon/mail.svg\" alt=\"\"></span>Contacto</a></li>\n      <li><a routerLink=\"registro\"><span class=\"icon-mail\"><img src=\"/assets/img/icon/key.svg\" alt=\"\"></span>Registro</a></li>\n      <li><a routerLink=\"login\"><span class=\"icon-mail\"><img src=\"/assets/img/icon/enter.svg\" alt=\"\"></span>Login</a></li>\n         \n</ul>\n\n\n</nav>\n\n\n</header>"
 
 /***/ }),
 
@@ -742,7 +804,7 @@ module.exports = "\n#divpadrecarousel{\nwidth: 50%;\nmargin: auto;\nheight: 400p
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<div id=\"divpadrecarousel\">\n  <div id=\"carouselExampleIndicators\" class=\"carousel slide\" data-ride=\"carousel\">\n    <ol class=\"carousel-indicators\">\n      <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>\n      <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>\n      <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"2\"></li>\n    </ol>\n    <div class=\"carousel-inner\">\n      <div class=\"carousel-item active\">\n        <img class=\"d-block w-100\" src=\"/assets/img/desa.jpg\" alt=\"First slide\">\n      </div>\n      <div class=\"carousel-item\">\n        <img class=\"d-block w-100\" src=\"/assets/img/susten.jpg\" alt=\"Second slide\">\n      </div>\n      <div class=\"carousel-item\">\n        <img class=\"d-block w-100\" src=\"/assets/img/susten.jpg\" alt=\"Third slide\">\n      </div>\n    </div>\n    <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">\n      <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Previous</span>\n    </a>\n    <a class=\"carousel-control-next\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"next\">\n      <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Next</span>\n    </a>\n  </div>\n</div>\n\n  <br>\n  <br>\n  <div id=\"divpadre\">\n    \n    <div id=\"hijos\">\n        <img src=\"/assets/img/icon/facebook.png\" alt=\"\">\n      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto nulla dolor quo id rerum nesciunt eum animi, sed earum nihil officiis, reiciendis fuga inventore quisquam similique ad rem ea hic\n  </div>\n\n    <div id=\"hijos\"><img src=\"/assets/img/icon/facebook.png\" alt=\"\">\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nostrum assumenda aperiam aliquid amet similique, porro illo aliquam beatae ipsa explicabo itaque ipsum ex consectetur vitae doloribus ratione, deserunt officiis.\n    </div>\n    <div id=\"hijos\">\n        <img src=\"/assets/img/icon/facebook.png\" alt=\"\">\n        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, recusandae exercitationem. Dolor, harum! Nostrum perferendis, facilis fuga laudantium maxime necessitatibus adipisci nam tempore, laboriosam modi nesciunt dolores. Quaerat, harum architecto.\n    </div>\n    <div id=\"hijos\">\n        <img src=\"/assets/img/icon/facebook.png\" alt=\"\">\n        \n        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, recusandae exercitationem. Dolor, harum! Nostrum perferendis, facilis fuga laudantium maxime necessitatibus adipisci nam tempore, laboriosam modi nesciunt dolores. Quaerat, harum architecto.\n    </div>\n    <div id=\"hijos\">\n        <img src=\"/assets/img/icon/facebook.png\" alt=\"\">\n        \n        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, recusandae exercitationem. Dolor, harum! Nostrum perferendis, facilis fuga laudantium maxime necessitatibus adipisci nam tempore, laboriosam modi nesciunt dolores. Quaerat, harum architecto.\n    </div>\n    <div id=\"hijos\">\n        <img src=\"/assets/img/icon/facebook.png\" alt=\"\">\n        \n        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, recusandae exercitationem. Dolor, harum! Nostrum perferendis, facilis fuga laudantium maxime necessitatibus adipisci nam tempore, laboriosam modi nesciunt dolores. Quaerat, harum architecto.\n    </div>\n    </div>\n<br>\n   "
+module.exports = "\n<div id=\"divpadrecarousel\">\n  <div id=\"carouselExampleIndicators\" class=\"carousel slide\" data-ride=\"carousel\">\n    <ol class=\"carousel-indicators\">\n      <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"0\" class=\"active\"></li>\n      <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"1\"></li>\n      <li data-target=\"#carouselExampleIndicators\" data-slide-to=\"2\"></li>\n    </ol>\n    <div class=\"carousel-inner\">\n      <div class=\"carousel-item active\">\n        <img class=\"d-block w-100\" src=\"/assets/img/desa.jpg\" alt=\"First slide\">\n      </div>\n      <div class=\"carousel-item\">\n        <img class=\"d-block w-100\" src=\"/assets/img/susten.jpg\" alt=\"Second slide\">\n      </div>\n      <div class=\"carousel-item\">\n        <img class=\"d-block w-100\" src=\"/assets/img/susten.jpg\" alt=\"Third slide\">\n      </div>\n    </div>\n    <a class=\"carousel-control-prev\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"prev\">\n      <span class=\"carousel-control-prev-icon\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Previous</span>\n    </a>\n    <a class=\"carousel-control-next\" href=\"#carouselExampleIndicators\" role=\"button\" data-slide=\"next\">\n      <span class=\"carousel-control-next-icon\" aria-hidden=\"true\"></span>\n      <span class=\"sr-only\">Next</span>\n    </a>\n  </div>\n</div>\n\n\n\n<!--\n\n  <br>\n  <br>\n  <div id=\"divpadre\">\n    \n    <div id=\"hijos\">\n        <img src=\"/assets/img/icon/facebook.png\" alt=\"\">\n      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto nulla dolor quo id rerum nesciunt eum animi, sed earum nihil officiis, reiciendis fuga inventore quisquam similique ad rem ea hic\n  </div>\n\n    <div id=\"hijos\"><img src=\"/assets/img/icon/facebook.png\" alt=\"\">\n    Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nostrum assumenda aperiam aliquid amet similique, porro illo aliquam beatae ipsa explicabo itaque ipsum ex consectetur vitae doloribus ratione, deserunt officiis.\n    </div>\n    <div id=\"hijos\">\n        <img src=\"/assets/img/icon/facebook.png\" alt=\"\">\n        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, recusandae exercitationem. Dolor, harum! Nostrum perferendis, facilis fuga laudantium maxime necessitatibus adipisci nam tempore, laboriosam modi nesciunt dolores. Quaerat, harum architecto.\n    </div>\n    <div id=\"hijos\">\n        <img src=\"/assets/img/icon/facebook.png\" alt=\"\">\n        \n        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, recusandae exercitationem. Dolor, harum! Nostrum perferendis, facilis fuga laudantium maxime necessitatibus adipisci nam tempore, laboriosam modi nesciunt dolores. Quaerat, harum architecto.\n    </div>\n    <div id=\"hijos\">\n        <img src=\"/assets/img/icon/facebook.png\" alt=\"\">\n        \n        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, recusandae exercitationem. Dolor, harum! Nostrum perferendis, facilis fuga laudantium maxime necessitatibus adipisci nam tempore, laboriosam modi nesciunt dolores. Quaerat, harum architecto.\n    </div>\n    <div id=\"hijos\">\n        <img src=\"/assets/img/icon/facebook.png\" alt=\"\">\n        \n        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cum, recusandae exercitationem. Dolor, harum! Nostrum perferendis, facilis fuga laudantium maxime necessitatibus adipisci nam tempore, laboriosam modi nesciunt dolores. Quaerat, harum architecto.\n    </div>\n    </div>\n<br>\n   \n-->"
 
 /***/ }),
 
@@ -772,6 +834,14 @@ var InicioComponent = /** @class */ (function () {
     }
     InicioComponent.prototype.ngOnInit = function () {
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], InicioComponent.prototype, "title", void 0);
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Input"])(),
+        __metadata("design:type", String)
+    ], InicioComponent.prototype, "body", void 0);
     InicioComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-inicio',
@@ -920,7 +990,7 @@ var ProyecComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "#divpadre{\n    width: 800px;\n    margin: auto;\n    display: -ms-grid;\n    display: grid;\n    -ms-grid-columns:  1fr 1fr;\n        grid-template-columns:  1fr 1fr;\n\n/*border: 3px solid rgb(173, 12, 47); */\nbackground-color: rgb(255, 255, 255);\ngap: 10px;\n\n}\n\n#divhijos{\n    grid-column-gap: 100px;\n    grid-row-gap: 1000Px;\n    padding: 40px 40px;\n    border: rgb(189, 230, 176) 5px solid;\n    border-top-left-radius: 20px;\n    border-bottom-right-radius: 20px;\n    box-shadow: 4px 7px #03a9eb7a;\n\n}\n\nimg{\nwidth: 300px;\nheight: 100px;\n\n\n}\n\n@media screen and (max-width: 700px) {\n\n    #divpadrecarousel{\n        width: 350px;\n        margin: auto;\n        \n        }\n\n    #divpadre{\n        margin: auto;\n        display: -ms-grid;\n        display: grid;\n        -ms-grid-columns: 1fr;\n            grid-template-columns: 1fr;\n        width: 100%;\n        height: 100%;\n    background-color: rgb(255, 255, 255);\n    }\n    \n    }\n    "
 
 /***/ }),
 
@@ -931,7 +1001,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<p>\n  proyectos works!\n</p>\n"
+module.exports = "\n<p>\n  proyectos works!\n</p>\n\n<div id=\"divpadre\">\n    <div  *ngFor=\"let post of posts\" id=\"divhijos\">\n        <a href=\"\"><img src=\"/assets/img/quees.png\" alt=\"\"></a>\n        <h5>{{post.name}}</h5>\n        <p>{{post.body}}</p>\n        </div>  \n    </div>\n  "
 
 /***/ }),
 
@@ -946,6 +1016,7 @@ module.exports = "\n<p>\n  proyectos works!\n</p>\n"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProyectosComponent", function() { return ProyectosComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _data_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../data.service */ "./src/app/data.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -956,8 +1027,16 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
 var ProyectosComponent = /** @class */ (function () {
-    function ProyectosComponent() {
+    function ProyectosComponent(dataservice) {
+        var _this = this;
+        this.dataservice = dataservice;
+        this.posts = [];
+        this.dataservice.getData().subscribe(function (data) {
+            _this.posts = data;
+            console.log(data);
+        });
     }
     ProyectosComponent.prototype.ngOnInit = function () {
     };
@@ -967,7 +1046,7 @@ var ProyectosComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./proyectos.component.html */ "./src/app/proyectos/proyectos.component.html"),
             styles: [__webpack_require__(/*! ./proyectos.component.css */ "./src/app/proyectos/proyectos.component.css")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_data_service__WEBPACK_IMPORTED_MODULE_1__["DataService"]])
     ], ProyectosComponent);
     return ProyectosComponent;
 }());
@@ -983,7 +1062,7 @@ var ProyectosComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = "#divhijo{\nwidth: 800px;\nbox-shadow: 7px 12px rgba(255, 81, 0, 0.349);\nheight: auto; \nmargin: auto;\ntext-align: justify;\n}\n#displayiconos img{\n    align-content: center;\nborder-radius: 40px;\n}\n#divicono{\n    width:40px;\nalign-content: center;\nbackground-color: blue;\nborder-radius: 40px;\n}\nimg{\n    box-shadow: 4px 5px rgba(0, 0, 0, 0.267);\n}"
 
 /***/ }),
 
@@ -994,7 +1073,7 @@ module.exports = ""
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<p>\n  quienessomos works!\n</p>\n"
+module.exports = "\n<div>\n  <img src=\"/assets/img/quees.png\" alt=\"\">\n</div>\n<div id=\"displayiconos\">\n<div id=\"divicono\"> <img src=\"/assets/img/icon/dropbox.svg\" alt=\"\"></div>\n<div id=\"divicono\"><img src=\"\" alt=\"\"></div>\n<div id=\"divicono\"><img src=\"\" alt=\"\"></div>\n</div>\n\n<br>\n<br>\n<br>\n<br>\n<div id=\"divhijo\">\n    <h5>¿Qué es el crowdfunding?</h5>\n\n<p>\nUna nueva forma de financiar proyectos con ayuda de los mecenas\n\nHasta hace muy poco tiempo, si alguien quería sacar un proyecto adelante y necesitaba financiación tenía una serie de opciones genéricas. Pedir un préstamo, una subvención o engañar a familiares o amigos. Hoy en día, cada vez existen más plataformas de crowdfunding, pero ¿qué es el crowdfunding, la financiación colectiva o el micromecenazgo?\n\n</p>\n\n\n<h5>Envíanos tu Proyecto</h5> \n\n<h6> Definiciones</h6>\nCrowdfunding: “Cooperación colectiva, llevada a cabo por personas que realizan una red para conseguir dinero u otros recursos, se suele utilizar Internet para financiar esfuerzos e iniciativas de otras personas u organizaciones”. Fuente: Wikipedia.\n<p>\nCrowdsourcing, “del inglés crowd (masa) y sourcing (externalización), también conocido como “tercerización masiva” o “subcontratación voluntaria”, consiste en externalizar tareas que, tradicionalmente, realizaba un empleado o contratista, a un grupo numeroso de personas o una comunidad (masa), a través de una convocatoria abierta.” Fuente: Wikipedia.\n\nEl crowdfunding nace de los primeros proyectos de Open Source donde los desarrolladores inicialmente ofrecían su trabajo de forma desinteresada. Posteriormente, frente al éxito de sus creaciones y también al trabajo que eso conllevaba, empezaron a pedir donaciones y la respuesta fue de nuevo mayor de la esperada. En ese momento, entre los creadores (que requerían de financiación) y los usuarios (que demandaban proyectos creativos y pagaban por ellos) nacia el Crowdfunding, la financiación colectiva, como una nueva opción para financiar, en un primer momento, proyecto creativos. Fuente: Wikipedia.\n\n“Nadie es dueño de la multitud aunque crea tenerla dominada – Eugene Ionesco, Dramaturgo francés”\nHoy en día, cada vez existen más webs de crowdfunding y más proyectos financiados por ésta vía, algo que supone una nueva revolución en todos los sectores en los que nos movamos.\n\nLos tipos de proyectos que se financian mediante el Crowdfunding no dejan de crecer, desde proyectos creativos hasta solidarios, pasando por empresariales. La especialización es cada vez mayor, y se espera que el crecimiento sea superior al 100% en los próximos años.\n</p>\n<h4>¿Cómo funciona el crowdfunding en general?</h4>\n<p>\n\nEl emprendedor (creativo…) envía el proyecto a la plataforma de Crowdfunding. Indicando descripción, cantidad necesaria, tiempo de recaudación, recompensas…\nAlgunos se valoran de forma comunitaria, otros los valora la plataforma de Crowdfunding…\nSe publica el proyecto por un tiempo determinado, 30, 60, 90, 120 días.\nSe promociona lo máximo posible.\nFin del plazo. Financiado o no.\nEste esquema puede verse alterado en gran medida en función del tipo de crowdfunding del que estemos hablado: recompensas, donaciones, inversión o préstamos.\n\nLa comunidad como esencia del crowdfunding\n¿Qué es una comunidad?\nRAE “Conjunto de personas y/u organizaciones interesadas en que un proyecto salga adelante”. “Un grupo de personas con diversas características que se encuentran asociadas por vínculos sociales, comparten perspectivas comunes y participan en acción conjunta en localidades o entornos geográficos (o virtuales).”\n\nLa comunidad como esencia del crowdfunding\nEl éxito o el fracaso de todos los proyectos que lanzan campañas de crowdfunding se basa en la captación de interesados, miembros de una comunidad, o activación de los componentes de una comunidad. El papel de las plataformas suele ser secundario, y es el promotor, el que ha de realizar el trabajo principal de movilización de su comunidad, que a su vez están compuestas por microcomunidades.\n</p>\n\n<h5>¿Somos una comunidad?</h5>\n<p>\nVisión común, valores.\nToda comunidad tiene una visión compartida y basada en unas ideas y valores similares.\nObjetivos comunes.\nLos miembros de una comunidad comparten objetivos finales, sus metas son las mismas.\nEl camino y las acciones a ejecutar son similares.\nLas acciones para alcanzar esos objetivos son coordinadas y complementarias entre los miembros de la comunidad.\nLa motivación y energía parecida.\nLas personas que conforman una comunidad están muy motivadas y son proactivas para alcanzar objetivos comunes y propios.\n“El valor singular del Crowdfunding no radica en el dinero sino en la comunidad que se empodera”\n\n</p>\n</div>\n"
 
 /***/ }),
 
