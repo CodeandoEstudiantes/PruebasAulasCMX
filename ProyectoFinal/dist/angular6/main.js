@@ -1062,7 +1062,7 @@ var ProyectosComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "#divhijo{\nwidth: 800px;\nbox-shadow: 7px 12px rgba(255, 81, 0, 0.349);\nheight: auto; \nmargin: auto;\ntext-align: justify;\n}\n#displayiconos img{\n    align-content: center;\nborder-radius: 40px;\n}\n#divicono{\n    width:40px;\nalign-content: center;\nbackground-color: blue;\nborder-radius: 40px;\n}\nimg{\n    box-shadow: 4px 5px rgba(0, 0, 0, 0.267);\n\n}\n@media screen and (max-width: 400px) {\n    img{\n        box-shadow: 4px 5px rgba(0, 0, 0, 0.267);\n        width: 350px;\n\n}\n\n#divhijo{\n    width: 330px;\n    box-shadow: 7px 12px rgba(255, 81, 0, 0.349);\n    height: auto;\n    margin: auto;\n    text-align: justify;\n\n}\n\n}"
+module.exports = "#divhijo{\nwidth: 800px;\nbox-shadow: 7px 12px rgba(255, 81, 0, 0.349);\nheight: auto; \nmargin: auto;\ntext-align: justify;\n}\n#displayiconos img{\n    align-content: center;\nborder-radius: 40px;\nbackground-color: blue;\n\n}\n#divicono{\n    width:40px;\nalign-content: center;\nbackground-color: blue;\nborder-radius: 40px;\n}\nimg{\n    box-shadow: 4px 5px rgba(0, 0, 0, 0.267);\nwidth: 100%;\n}\n@media screen and (max-width: 400px) {\n    img{\n        box-shadow: 4px 5px rgba(0, 0, 0, 0.267);\n        width: 350px;\n\n}\n\n#divhijo{\n    width: 330px;\n    box-shadow: 7px 12px rgba(255, 81, 0, 0.349);\n    height: auto;\n    margin: auto;\n    text-align: justify;\n\n}\n\n}"
 
 /***/ }),
 
