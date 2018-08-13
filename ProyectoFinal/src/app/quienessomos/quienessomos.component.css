@@ -12,7 +12,7 @@ text-align: justify;
     position: fixed;
     display: grid;
     grid-template-columns: 1fr ;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     grid-gap: 20px;
     z-index: 6000;
     left: 20px;
