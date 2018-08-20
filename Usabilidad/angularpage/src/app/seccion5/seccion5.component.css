@@ -1,0 +1,27 @@
+#grid{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin: 50px;
+
+}
+
+#grid div{
+    border: 1px red solid;
+    
+}
+
+
+#imagen{
+    text-align: left;
+    margin: 12px 0 12px 0;
+    
+}
+.imagen1{
+
+    width: 60%;
+    
+}
+#texto{
+    text-align: left; 
+}
